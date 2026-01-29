@@ -24,7 +24,6 @@ jobs:
       - uses: moonrepo/setup-rust@v1
       - run: dart pub get
       - run: mkdir build
-      - run: cp config.sample.json ./build/config.json
       - name: Compile vodozemac
         working-directory: build
         run: |
@@ -37,6 +36,7 @@ jobs:
           mkdir build
           mv ./rust/target ./build/vod
           rm -rf rust
+      - run: cp config.sample.json ./build/config.json
       - name: Compile Matrix Dart ChatGPT Bot
         run: dart compile exe ./bin/matrix_echo_bot.dart --output ./build/matrix_echo_bot.exe
       - name: Create archive
