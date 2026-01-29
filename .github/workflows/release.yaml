@@ -40,7 +40,7 @@ jobs:
       - name: Compile Matrix Dart ChatGPT Bot
         run: dart compile exe ./bin/matrix_echo_bot.dart --output ./build/matrix_echo_bot.exe
       - name: Create archive
-        run: tar -czf matrix_echo_bot${{ matrix.arch }}.tar.gz build/
+        run: tar -czf matrix_echo_bot_${{ matrix.arch }}.tar.gz build/
       - name: Upload to release
         uses: softprops/action-gh-release@v2
         with:
