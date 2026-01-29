@@ -13,22 +13,23 @@ void answerMessage(Event event, BotConfig config) async {
     }
 
     event.room.client.syncPresence = PresenceType.online;
-    await event.room.setTyping(true);
 
     final firstWord = event.body.trim().split(' ').first.toLowerCase();
     if (firstWord == 'help') {
       await event.room.sendTextEvent(
           config.welcomeMessage ?? 'No welcome message specified');
+    } else {
+      final number = int.tryParse(firstWord);
+      if (number != null) {
+        await event.room.setTyping(true);
+        await Future.delayed(Duration(seconds: number));
+        await event.room.setTyping(false);
+      }
+      await event.room.sendTextEvent(event.body);
     }
-    final number = int.tryParse(firstWord);
-    if (number != null) {
-      await Future.delayed(Duration(seconds: number));
-    }
-    await event.room.sendTextEvent(event.body);
   } catch (e, s) {
     await event.room.sendTextEvent('Unexpected error occurded:\n$e\n\n$s');
   } finally {
     event.room.client.syncPresence = PresenceType.offline;
-    await event.room.setTyping(false);
   }
 }
