@@ -34,7 +34,8 @@ jobs:
           cd ./rust
           cargo build --release
           cd ..
-          mv ./rust/target ./vod
+          mkdir build
+          mv ./rust/target ./build/vod
           rm -rf rust
       - name: Compile Matrix Dart ChatGPT Bot
         run: dart compile exe ./bin/matrix_echo_bot.dart --output ./build/matrix_echo_bot.exe
