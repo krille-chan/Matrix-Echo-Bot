@@ -1,0 +1,9 @@
+{
+    "matrixId": "<Your Matrix ID here>",
+    "password": "<Your Password here>",
+    "accessToken": null,
+    "homeserver": "https://matrix.org",
+    "allowList": [],
+    "passphrase": null,
+    "welcomeMessage": "Hi! I’m the FluffyChat Review Bot.\nReply with any message to get an echo.\nStart your message with a number to delay the reply (in seconds)."
+}

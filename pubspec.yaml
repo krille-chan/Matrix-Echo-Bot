@@ -1,0 +1,17 @@
+name: matrix_echo_bot
+description: A dead simple echo bot for testing
+version: 1.0.0
+repository: https://github.com/krille-chan/matrix-dart-chatgpt
+
+environment:
+  sdk: ^3.1.0
+
+dependencies:
+  matrix: ^6.0.0
+  sqflite_common_ffi: ^2.3.6
+  vodozemac: ^0.4.0
+
+dev_dependencies:
+  import_sorter: ^4.6.0
+  lints: ^6.0.0
+  test: ^1.29.0
