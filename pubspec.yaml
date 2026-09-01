@@ -1,6 +1,6 @@
 name: matrix_echo_bot
 description: A dead simple echo bot for testing
-version: 1.0.0
+version: 1.1.0
 repository: https://github.com/krille-chan/matrix-dart-chatgpt
 
 environment:
