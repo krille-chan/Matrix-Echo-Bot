@@ -17,6 +17,7 @@ Future<Client> connectMatrixClient(BotConfig config) async {
       sqfliteFactory: databaseFactoryFfi,
     ),
     logLevel: config.logLevel,
+    shareKeysWith: ShareKeysWith.all,
   );
   client.syncPresence = PresenceType.offline;
 
